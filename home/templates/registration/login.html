@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+
+<!-- login body -->
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+{{ form.as_p }}
+ 
+<input type="submit" value="login" />
+</form>
+</div>
+</div>
+
+<h3>For demonstration purposes, the superuser is admin-admin, while the performer is tester-tester</p></h3>
+{% endblock %}

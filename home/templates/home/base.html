@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<head>
+    <title>Brandeburg 2020</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href="{% static 'home/style.css' %}"/> 
+    <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.ico' %}"/>
+</head>
+<body>
+<nav class="navbar navbar-dark" style='background-color:#377ba8'>
+    <span class="navbar-brand mb-0 h1">Vote Brandeburg for ANC 1D04</span>
+</nav>
+<p></p>
+<!-- instead of coding each page like we've been doing,
+    making instead a "base.html", like a cookie cutter,
+    which uses BLOCKS, that will allow for plug-in-play coding -->
+{% block main_content %}
+{% endblock %}
+{% include 'home/footer.html' %}
+
+</body>

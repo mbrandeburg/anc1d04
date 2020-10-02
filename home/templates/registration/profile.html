@@ -1,0 +1,33 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+
+<!-- this is the main page once loggedin - I may do javascript that auto loads us to the main page? -->
+{% if user.is_authenticated %}
+  <h1>You are logged in as <i>{{ user }}</i> </h1> <br></br>
+  {% if user.is_staff %}
+    <button type="button" class="btn btn-success btn-md">
+    <a href="{% url 'polls:index' %}" style="color:white;">Click here to see the dashboard and submit a system as completed</a>
+    </button>
+    {% else %}
+    <button type="button" class="btn btn-success btn-md">
+    <a href="{% url 'polls:index' %}" style="color:white;">Click here to submit a system as completed</a>
+  </button>
+  {% endif %}
+  <br></br>
+  <button type="button" class="btn btn-danger btn-md">
+  <a href="{% url 'logout' %}" style="color:white;">Click here to log out</a>
+</button>
+{% else %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container-fluid">
+  <h1>Welcome to the reporting website</h1>
+  <h3>You are not logged in</h3>
+  <p></p>
+  <button type="button" class="btn btn-success btn-md">
+  <a href="{% url 'login' %}" style="color:white;">Click here to log in</a>
+  </button>
+  </div>
+  </div>
+{% endif %}
+
+{% endblock %}

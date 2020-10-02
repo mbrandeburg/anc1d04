@@ -1,0 +1,9 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+
+<h1>You have been logged out</h1>
+<br></br>
+<button type="button" class="btn btn-secondary btn-md">
+<a href="{% url 'login' %}" style="color:white;"> Click here to log in again</a>
+</button>
+{% endblock %}

@@ -1,0 +1,7 @@
+# first create a Project (container).
+django-admin.py startproject Project
+
+# create multiple apps
+cd Project
+python manage.py startapp polls
+python manage.py startapp hello
