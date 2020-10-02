@@ -1,0 +1,45 @@
+<!-- REMEMBER, KICK ALL THIS OFF UP A LEVEL WITH: python3 manage.py runserver -->
+
+<!-- got rid of header being replaced by base.html -->
+{% extends 'home/base.html' %}
+{% block main_content %}
+{% if user.is_authenticated %}
+<!-- resume non-pulled in code from elsewhere -->
+<br></br>
+<h1>Vote Brandeburg 2020 <i> {{user}} </i> </h1>
+<p></p>
+<button type="button" class="btn btn-danger btn-md">
+<a href="{% url 'logout' %}" style="color:white;">Click here to log out</a>
+</button>
+<p></p>
+{% elif user.is_staff %}
+
+<br></br>
+<p></p>
+<!-- get a sql output - maybe build a dashboard -->
+<h1> Dashboard </h1>
+<p></p>
+<!-- WE INTERACT WITH VIEWS.PY TO GET VARIALBES HERE TO DISPLAY -->
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+<h2>{{helloWorld}}</h2>
+</div>
+</div>
+
+
+
+<!-- login if user is not authenticataed -->
+{% else %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container-fluid">
+  <h1>Welcome to the Bandeburg 2020 website</h1>
+  <h3>You are not logged in</h3>
+  <p></p>
+  <button type="button" class="btn btn-success btn-md">
+  <a href="{% url 'login' %}" style="color:white;">Click here to log in</a>
+  </button>
+  </div>
+  </div>
+{% endif %}
+
+{% endblock %}
