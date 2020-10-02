@@ -15,7 +15,7 @@ def index(request):
     # now pass everything to the webpage, assiging our json to the context dictionary
     context = {'helloWorld':testVariable}
     return render(request,'home/index.html', context)
-
+    # return render(request,'home/indexWithAuth.html', context)
 
 
 
