@@ -17,7 +17,7 @@ def main():
     execute_from_command_line(sys.argv)
 
 ## example usage: 
-# python3 manage.py startapp polls
+# python3 manage.py startapp home (NB: Makes the skeleton you need under folder named `home`)
 # python3 manage.py runserver
 if __name__ == '__main__':
     main()

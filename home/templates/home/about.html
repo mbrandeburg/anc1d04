@@ -1,0 +1,20 @@
+<!-- got rid of header being replaced by base.html -->
+{% extends 'home/base.html' %}
+{% block main_content %}
+
+<!-- resume non-pulled in code from elsewhere -->
+<br></br>
+<h1>About</h1>
+<br></br>
+<p></p>
+<!-- get a sql output - maybe build a dashboard -->
+<h1> Bio for Matthew Brandeburg </h1>
+<p></p>
+<!-- WE INTERACT WITH VIEWS.PY TO GET VARIALBES HERE TO DISPLAY -->
+<div class="jumbotron jumbotron-fluid">
+<div class="container-fluid">
+<h2>{{helloWorld}}</h2>
+</div>
+</div>
+<a href = "{% url 'home:index' %}">Return to main page</a>
+{% endblock %}

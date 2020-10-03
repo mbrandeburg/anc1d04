@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # added in this DIRS path for my registraiton templates
-        'DIRS': [os.path.join(BASE_DIR, 'polls/templates'),],
+        'DIRS': [os.path.join(BASE_DIR, 'home/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
